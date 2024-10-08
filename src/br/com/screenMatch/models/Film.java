@@ -1,6 +1,8 @@
 package br.com.screenMatch.models;
 
-public class Film extends Title{
+import br.com.screenMatch.calculation.Classifiable;
+
+public class Film extends Title implements Classifiable {
     String director;
 
     public String getDirector() {
@@ -9,5 +11,10 @@ public class Film extends Title{
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getClassifiable() {
+        return (int) media() / 2;
     }
 }

@@ -1,37 +1,52 @@
+import br.com.screenMatch.calculation.FilterRecommendation;
 import br.com.screenMatch.calculation.TimeCalculation;
+import br.com.screenMatch.models.Episodes;
 import br.com.screenMatch.models.Film;
 import br.com.screenMatch.models.Series;
 
 public class Main {
     public static void main(String[] args) {
-        Film favorite = new Film();
-        Film other = new Film();
+        Film myFilm = new Film();
+        myFilm.setName("The Substance");
+        myFilm.setYear(2024);
+        myFilm.setDuration(140);
+        System.out.println("Duração do filme: " + myFilm.getDuration());
+
+        myFilm.description();
+        myFilm.avaliation(9);
+        myFilm.avaliation(7);
+        myFilm.avaliation(8);
+        System.out.println("Total de Avaliações: " + myFilm.getTotalAvaliation());
+        System.out.println(myFilm.media());
+
         Series series = new Series();
-        TimeCalculation timeCalculation = new TimeCalculation();
+        series.setName("Flea Bag");
+        series.setYear(2016);
+        series.description();
+        series.setSeasons(2);
+        series.setEpisodesBySeason(6);
+        series.setMinutesPerEpisode(20);
+        System.out.println("Duração para maratonar " + series.getName() + " : " + series.getDuration());
 
-        favorite.setName("The Matrix");
-        favorite.setYear(1999);
-        favorite.setDuration(135);
-        favorite.setPlan(true);
+        Film otherFilm = new Film();
+        otherFilm.setName("Harry Potter e a Pedra Filosofal");
+        otherFilm.setYear(2001);
+        otherFilm.setDuration(152);
 
-        other.setName("Warriors");
-        other.setYear(1988);
-        other.setDuration(120);
-        other.setPlan(true);
+        TimeCalculation calculator = new TimeCalculation();
+        calculator.insert(myFilm);
+        calculator.insert(otherFilm);
+        calculator.insert(series);
+        System.out.println(calculator.getTotalTime());
 
-        series.setName("Dragon Ball");
-        series.setYear(1999);
-        series.setPlan(true);
-        series.setActivates(false);
-        series.setSeasons(26);
-        series.setEpisodesBySeason(20);
-        series.setMinutesPerEpisode(30);
+        FilterRecommendation filter = new FilterRecommendation();
+        filter.filter(myFilm);
 
-        timeCalculation.insert(favorite);
-        timeCalculation.insert(other);
-        timeCalculation.insert(series);
-
-        System.out.println("tempo Total " + timeCalculation.getTotalTime());
+        Episodes episodes = new Episodes();
+        episodes.setNumber(1);
+        episodes.setSeries(series);
+        episodes.setFullView(168);
+        filter.filter(episodes);
 
 
     }
