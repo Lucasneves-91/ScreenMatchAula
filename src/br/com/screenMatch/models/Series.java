@@ -7,10 +7,10 @@ public class Series extends Title {
     private int episodesBySeason;
     private int minutesPerEpisode;
 
-    @Override
-    public int getDuration() {
-        return seasons * episodesBySeason * minutesPerEpisode;
+    public Series(String name, int year) {
+        super(name, year);
     }
+
 
     public int getSeasons() {
         return seasons;
@@ -43,4 +43,10 @@ public class Series extends Title {
     public void setMinutesPerEpisode(int minutesPerEpisode) {
         this.minutesPerEpisode = minutesPerEpisode;
     }
+
+    @Override
+    public int getDuration() {
+        return seasons * episodesBySeason * minutesPerEpisode;
+    }
+
 }

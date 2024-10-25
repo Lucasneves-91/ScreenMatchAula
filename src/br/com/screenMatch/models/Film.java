@@ -5,6 +5,10 @@ import br.com.screenMatch.calculation.Classifiable;
 public class Film extends Title implements Classifiable {
     String director;
 
+    public Film(String name, int year) {
+        super(name, year);
+    }
+
     public String getDirector() {
         return director;
     }

@@ -9,21 +9,9 @@ public class Title {
     private double sumAvaliation;
     private int totalAvaliation;
 
-    public void description() {
-        System.out.println("Nome do filme: " + name);
-        System.out.println("Ano de lançamento: " + year);
-        System.out.println("Duração em minutos: " + duration);
-        System.out.println("Incluído no plano: + " + plan);
-
-    }
-
-    public void avaliation(double note) {
-        sumAvaliation += note;
-        totalAvaliation ++;
-    }
-
-    public double media(){
-        return sumAvaliation / totalAvaliation;
+    public Title(String name, int year) {
+        this.name = name;
+        this.year = year;
     }
 
     public String getName() {
@@ -73,4 +61,23 @@ public class Title {
     public void setTotalAvaliation(int totalAvaliation) {
         this.totalAvaliation = totalAvaliation;
     }
+
+    public void description() {
+        System.out.println("Nome do filme: " + name);
+        System.out.println("Ano de lançamento: " + year);
+        System.out.println("Duração em minutos: " + duration);
+        System.out.println("Incluído no plano: + " + plan);
+
+    }
+
+    public void avaliation(double note) {
+        sumAvaliation += note;
+        totalAvaliation ++;
+    }
+
+    public double media(){
+        return sumAvaliation / totalAvaliation;
+    }
+
+
 }

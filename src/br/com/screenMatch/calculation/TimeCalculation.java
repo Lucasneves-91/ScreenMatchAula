@@ -6,11 +6,12 @@ public class TimeCalculation {
 
     private int totalTime;
 
-    public void insert(Title title) {
-        totalTime += title.getDuration();
+    public int getTotalTime() {
+        return this.totalTime;
     }
 
-    public int getTotalTime() {
-        return totalTime;
+    public void insert(Title title) {
+        System.out.println("Adicionando duração em minutos de " + title);
+        this.totalTime += title.getDuration();
     }
 }
