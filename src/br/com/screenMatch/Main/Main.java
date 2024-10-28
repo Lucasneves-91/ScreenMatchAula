@@ -1,3 +1,5 @@
+package br.com.screenMatch.Main;
+
 import br.com.screenMatch.calculation.FilterRecommendation;
 import br.com.screenMatch.calculation.TimeCalculation;
 import br.com.screenMatch.models.Episodes;
@@ -49,7 +51,8 @@ public class Main {
         listFilm.add(otherFilm);
         System.out.println(listFilm);
         System.out.println("Tamanho da lista: " +listFilm.size());
-        System.out.println("Primeiro Filme: " +listFilm.get(0));
+        System.out.println("Primeiro Filme: " +listFilm.get(0).getName());
+
 
 
     }
