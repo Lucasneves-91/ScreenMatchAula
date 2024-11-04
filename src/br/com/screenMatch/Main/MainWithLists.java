@@ -5,6 +5,7 @@ import br.com.screenMatch.models.Series;
 import br.com.screenMatch.models.Title;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainWithLists {
     public static void main(String[] args){
@@ -19,12 +20,15 @@ public class MainWithLists {
         list.add(otherFilm);
         list.add(series);
 
-        for (Title item : list) {
-            System.out.println(item.getName());
-            if(item instanceof Film film && film.getClassifiable() > 2){
-                System.out.println("Classificação " + film.getClassifiable());
-            }
-        }
+        Collections.sort(list);
+        System.out.println(list);
+
+        //for (Title item : list) {
+          //  System.out.println(item.getName());
+            //if(item instanceof Film film && film.getClassifiable() > 2){
+              //  System.out.println("Classificação " + film.getClassifiable());
+          //  }
+       // }
 
 
     }

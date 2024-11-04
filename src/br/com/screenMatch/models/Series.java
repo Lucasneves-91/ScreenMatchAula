@@ -49,4 +49,8 @@ public class Series extends Title {
         return seasons * episodesBySeason * minutesPerEpisode;
     }
 
+    @Override
+    public String toString() {
+        return "Series: " + this.getName() + "(" +this.getYear() + ")";
+    }
 }

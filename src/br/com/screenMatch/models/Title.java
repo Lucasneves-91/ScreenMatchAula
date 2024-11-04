@@ -1,6 +1,6 @@
 package br.com.screenMatch.models;
 
-public class Title {
+public class Title implements Comparable <Title> {
 
     private String name;
     private int year;
@@ -80,4 +80,8 @@ public class Title {
     }
 
 
+    @Override
+    public int compareTo(Title otherTitle) {
+        return this.getName().compareTo(otherTitle.getName());
+    }
 }
